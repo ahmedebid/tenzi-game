@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import Die from "./components/Die"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+    return (
+        <main>
+            <div className="dice">
+                <Die value="1" />
+                <Die value="4" />
+                <Die value="5" />
+                <Die value="6" />
+                <Die value="3" />
+                <Die value="5" />
+                <Die value="2" />
+                <Die value="4" />
+                <Die value="4" />
+                <Die value="1" />
+            </div>
+        </main>
+    )
 }
-
-export default App;
