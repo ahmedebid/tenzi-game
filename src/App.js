@@ -14,7 +14,7 @@ export default function App() {
             if (randomNum !== 0) {
                 diceArray.push({
                     value: randomNum,
-                    isHeld: false,
+                    isHeld: true,
                     id: nanoid()
                 });
             }
@@ -23,13 +23,11 @@ export default function App() {
         return diceArray;
     }
 
-    console.log(allNewDice());
-
     function rollDice() {
         setDice(allNewDice());
     }
 
-    const dieElements = dice.map(die => <Die key={die.id} value={die.value} />)
+    const dieElements = dice.map(die => <Die key={die.id} value={die.value} selected={die.isHeld}/>)
 
     return (
         <main>
