@@ -92,8 +92,8 @@ select {
 /* -------------------------------------------- */
 
 main {
-  width: 320px;
-  height: 320px;
+  max-width: 320px;
+  /* height: 320px; */
   background: #F5F5F5;
   border-radius: 10px;
   display: flex;
@@ -101,16 +101,29 @@ main {
   justify-content: center;
   align-items: center;
   gap: 25px;
+  padding: 30px;
 }
 
 /* -------------------------------------------- */
 /* Specific Styles                              */
 /* -------------------------------------------- */
 
+.game-title {
+  font-size: 25px;
+  line-height: 30px;
+  letter-spacing: -0.03em;
+}
+
+.game-instructions {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  text-align: center;
+}
+
 .dice {
   display: flex;
   flex-wrap: wrap;
-  width: 90%;
   justify-content: center;
   align-items: center;
   gap: 18px;
