@@ -24,20 +24,16 @@ export default function App() {
     }
 
     function rollDice() {
-        setDice(allNewDice());
+        setDice(prevDice => prevDice.map(die => {
+            return die.isHeld ? 
+                die : 
+                {
+                    value: Math.floor(Math.random() * 7), 
+                    isHeld: false, 
+                    id: nanoid()
+                }
+        }))
     }
-
-/**
- * Challenge: Update the `holdDice` function to flip
- * the `isHeld` property on the object in the array
- * that was clicked, based on the `id` prop passed
- * into the function.
- * 
- * Hint: as usual, there's > 1 way to accomplish this.
- * I'll be using `dice.map()` and checking for the `id`
- * of the die to determine which one to flip `isHeld` on,
- * but you can do whichever way makes the most sense to you.
- */
 
     function holdDice(id) {
         setDice(prevDice => prevDice.map(die => die.id === id ? {...die, isHeld: !die.isHeld} : die));
