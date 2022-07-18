@@ -1,6 +1,22 @@
-import Die from "./components/Die"
+import Die from "./components/Die";
 
 export default function App() {
+
+    function allNewDice() {
+        const diceArray = [];
+
+        while (diceArray.length < 10) {
+            const randomNum = Math.floor(Math.random() * 7);
+            if (randomNum !== 0) {
+                diceArray.push(randomNum);
+            }
+        }
+
+        return diceArray;
+    }
+
+    console.log(allNewDice());
+
     return (
         <main>
             <div className="dice">
