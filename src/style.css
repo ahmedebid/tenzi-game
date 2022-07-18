@@ -97,8 +97,10 @@ main {
   background: #F5F5F5;
   border-radius: 10px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 25px;
 }
 
 /* -------------------------------------------- */
@@ -128,4 +130,18 @@ main {
 
 .die-num {
   font-size: 20px;
+}
+
+button {
+  background: #5035FF;
+  box-shadow: 0px 3.2px 7.68px rgba(0, 0, 0, 0.18);
+  border-radius: 3.81277px;
+  color: #fff;
+  border: none;
+  padding: 6px 20px;
+  cursor: pointer;
+}
+
+button:active {
+  box-shadow: none;
 }
