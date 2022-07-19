@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { nanoid } from "nanoid";
+import Confetti from "react-confetti";
 import Die from "./components/Die";
 
 export default function App() {
@@ -52,6 +53,16 @@ export default function App() {
 
     }, [dice])
 
+/**
+ * Challenge: Tie off loose ends!
+ * 1. If tenzies is true, Change the button text to "New Game"
+ * 2. If tenzies is true, use the "react-confetti" package to
+ *    render the <Confetti /> component 🎉
+ * 
+ *    Hint: don't worry about the `height` and `width` props
+ *    it mentions in the documentation.
+ */
+
     function allNewDice() {
         const diceArray = [];
 
@@ -89,6 +100,7 @@ export default function App() {
 
     return (
         <main>
+            {tenzi && <Confetti />}
             <h1 className="game-title">Tenzies</h1>
             <p className="game-instructions">
                 Roll until all dice are the same. Click each die to freeze it at its current value between rolls.
@@ -96,7 +108,7 @@ export default function App() {
             <div className="dice">
                 {dieElements}
             </div>
-            <button onClick={rollDice}>Roll</button>
+            <button onClick={rollDice}>{tenzi ? "New Game" : "Roll"}</button>
         </main>
     )
 }
