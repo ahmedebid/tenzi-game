@@ -53,28 +53,20 @@ export default function App() {
 
     }, [dice])
 
-/**
- * Challenge: Tie off loose ends!
- * 1. If tenzies is true, Change the button text to "New Game"
- * 2. If tenzies is true, use the "react-confetti" package to
- *    render the <Confetti /> component 🎉
- * 
- *    Hint: don't worry about the `height` and `width` props
- *    it mentions in the documentation.
- */
+    function generateRandomDie() {
+        const randomNum = Math.ceil(Math.random() * 6);
+        return {
+            value: randomNum,
+            isHeld: false,
+            id: nanoid()
+        }
+    }
 
     function allNewDice() {
         const diceArray = [];
 
         while (diceArray.length < 10) {
-            const randomNum = Math.floor(Math.random() * 7);
-            if (randomNum !== 0) {
-                diceArray.push({
-                    value: randomNum,
-                    isHeld: false,
-                    id: nanoid()
-                });
-            }
+            diceArray.push(generateRandomDie());
         }
 
         return diceArray;
@@ -84,16 +76,17 @@ export default function App() {
         setDice(prevDice => prevDice.map(die => {
             return die.isHeld ? 
                 die : 
-                {
-                    value: Math.floor(Math.random() * 7), 
-                    isHeld: false, 
-                    id: nanoid()
-                }
+                generateRandomDie()
         }))
     }
 
     function holdDice(id) {
         setDice(prevDice => prevDice.map(die => die.id === id ? {...die, isHeld: !die.isHeld} : die));
+    }
+
+    function restartGame() {
+        setTenzi(false);
+        setDice(allNewDice());
     }
 
     const dieElements = dice.map(die => <Die key={die.id} value={die.value} selected={die.isHeld} holdDice={() => holdDice(die.id)}/>)
@@ -108,7 +101,7 @@ export default function App() {
             <div className="dice">
                 {dieElements}
             </div>
-            <button onClick={rollDice}>{tenzi ? "New Game" : "Roll"}</button>
+            <button onClick={tenzi ? restartGame : rollDice}>{tenzi ? "New Game" : "Roll"}</button>
         </main>
     )
 }
