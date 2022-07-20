@@ -44,10 +44,10 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  background: #2B283A;
+  background: #4d9078;
   font-family: 'Karla', sans-serif;
   font-weight: 700;
-  color: #2B283A;
+  color: #3B1C32;
 }
 
 /* A elements that don't have a class get default styles */
@@ -92,8 +92,7 @@ select {
 /* -------------------------------------------- */
 
 main {
-  max-width: 320px;
-  /* height: 320px; */
+  max-width: 360px;
   background: #F5F5F5;
   border-radius: 10px;
   display: flex;
@@ -108,16 +107,28 @@ main {
 /* Specific Styles                              */
 /* -------------------------------------------- */
 
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #F78154;
+}
+
+.logo-icon {
+  font-size: 40px;
+}
+
 .game-title {
-  font-size: 25px;
+  font-size: 30px;
+  font-family: 'Rubik Moonrocks', cursive;
   line-height: 30px;
-  letter-spacing: -0.03em;
+  letter-spacing: 0.05em;
+  color: #F78154;
 }
 
 .game-instructions {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
-  font-size: 13px;
   text-align: center;
 }
 
@@ -142,7 +153,7 @@ main {
 }
 
 .die-selected {
-  background: #59E391;
+  background: #F2C14E;
 }
 
 .die-num {
@@ -150,7 +161,7 @@ main {
 }
 
 button {
-  background: #5035FF;
+  background: #CA054D;
   box-shadow: 0px 3.2px 7.68px rgba(0, 0, 0, 0.18);
   border-radius: 3.81277px;
   color: #fff;

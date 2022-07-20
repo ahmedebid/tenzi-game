@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { nanoid } from "nanoid";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDice } from "@fortawesome/free-solid-svg-icons";
 import Confetti from "react-confetti";
 import Die from "./components/Die";
 
@@ -94,9 +96,12 @@ export default function App() {
     return (
         <main>
             {tenzi && <Confetti />}
-            <h1 className="game-title">Tenzies</h1>
+            <div className="logo">
+                <h1 className="game-title">Tenzi Game</h1> 
+                <FontAwesomeIcon className="logo-icon" icon={faDice} />
+            </div>
             <p className="game-instructions">
-                Roll until all dice are the same. Click each die to freeze it at its current value between rolls.
+                Roll until all dice are the same.<br/><br/>Click each die to freeze it at its current value between rolls.
             </p>
             <div className="dice">
                 {dieElements}
