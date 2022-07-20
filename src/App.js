@@ -101,7 +101,7 @@ export default function App() {
                 <FontAwesomeIcon className="logo-icon" icon={faDice} />
             </div>
             <p className="game-instructions">
-                Roll until all dice are the same.<br/><br/>Click each die to freeze it at its current value between rolls.
+                Roll until all dice are the same.<br/>Click each die to freeze it.<br/><br/><span>Have Fun!</span> 😉
             </p>
             <div className="dice">
                 {dieElements}

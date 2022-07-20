@@ -111,7 +111,7 @@ main {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: #F78154;
+  color: #CA054D;
 }
 
 .logo-icon {
@@ -123,13 +123,18 @@ main {
   font-family: 'Rubik Moonrocks', cursive;
   line-height: 30px;
   letter-spacing: 0.05em;
-  color: #F78154;
+  color: #CA054D;
 }
 
 .game-instructions {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   text-align: center;
+}
+
+span {
+  font-weight: 700;
+  color: #F78154;
 }
 
 .dice {
@@ -141,9 +146,6 @@ main {
 }
 
 .die {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 36px;
   height: 36px;
   background: #FFF;
@@ -153,11 +155,7 @@ main {
 }
 
 .die-selected {
-  background: #F2C14E;
-}
-
-.die-num {
-  font-size: 20px;
+  color: #00A6ED;
 }
 
 button {
